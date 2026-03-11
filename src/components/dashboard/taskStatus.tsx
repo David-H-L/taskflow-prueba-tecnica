@@ -1,17 +1,9 @@
-type TaskStatus = {
-  label: string;
-  value: number;
-  color: string;
-};
+import { PropsTaskStatus } from '@/types/dashboard/taskStatus';
 
-type Props = {
-  data: TaskStatus[];
-};
-
-export default function TasksStatus({ data }: Props) {
+export default function TasksStatus({ data }: PropsTaskStatus) {
   const maxValue = Math.max(...data.map((item) => item.value));
   return (
-    <div className="w-full bg-white rounded-xl shadow-md p-4 md:p-6">
+    <div className="w-full bg-white rounded-xl shadow-md p-4">
       <h2 className="text-lg md:text-xl font-semibold mb-4">
         Tareas por estado
       </h2>
