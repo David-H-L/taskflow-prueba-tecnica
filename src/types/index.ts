@@ -39,3 +39,17 @@ export type ButtonProps = {
   className?: string;
   type?: 'button' | 'submit' | 'reset';
 };
+
+type ProgressStatus = {
+  completed: number;
+  inProgress: number;
+  pending: number;
+};
+
+export type ProjectCardProps = {
+  id: string;
+  name: string;
+  description: string;
+  color: string;
+  tasks: ProgressStatus;
+};

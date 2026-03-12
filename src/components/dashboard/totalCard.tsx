@@ -9,7 +9,7 @@ export default function TotalCard({ title, value, icon }: PropsTotalCard) {
       <h2 className="text-lg md:text-xl font-semibold mb-4 sm:mb-6">{title}</h2>
       <div className="flex justify-between">
         <span className="text-4xl sm:text-5xl font-bold">{value}</span>
-        {icon === 1 ? (
+        {icon === 0 ? (
           <FontAwesomeIcon
             icon={faFolderOpen}
             className="text-4xl text-gray-500 sm:text-5xl"

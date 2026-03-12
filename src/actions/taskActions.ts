@@ -26,7 +26,7 @@ export async function getTasks() {
 
       const color =
         status === 'PENDING'
-          ? 'bg-orange-400'
+          ? 'bg-red-500'
           : status === 'IN_PROGRESS'
             ? 'bg-blue-500'
             : 'bg-green-500';
