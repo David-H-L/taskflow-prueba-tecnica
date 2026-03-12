@@ -1,4 +1,4 @@
-import { Task } from '@/types/dashboard/task';
+import { Task } from '@/types/index';
 
 export default function PendingTasksCard({
   number,

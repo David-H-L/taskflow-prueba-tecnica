@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons';
-import { PropsTotalCard } from '@/types/dashboard/totalCard';
+import { PropsTotalCard } from '@/types/index';
 
 export default function TotalCard({ title, value, icon }: PropsTotalCard) {
   return (

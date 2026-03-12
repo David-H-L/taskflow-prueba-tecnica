@@ -1,4 +1,4 @@
-import { PropsTaskStatus } from '@/types/dashboard/taskStatus';
+import { PropsTaskStatus } from '@/types/index';
 
 export default function TasksStatus({ data }: PropsTaskStatus) {
   const maxValue = Math.max(...data.map((item) => item.value));

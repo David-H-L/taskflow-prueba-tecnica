@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-regular-svg-icons';
-import { PropsTaskTable } from '@/types/dashboard/taskTable';
+import { PropsTaskTable } from '@/types/index';
 
 const stateColors: Record<string, string> = {
   PENDING: 'bg-orange-500',

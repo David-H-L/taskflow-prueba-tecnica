@@ -1,9 +1,4 @@
-type ButtonProps = {
-  children: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'success' | 'danger';
-  className?: string;
-  type?: 'button' | 'submit' | 'reset';
-};
+import { ButtonProps } from '@/types/index';
 
 export default function Button({
   children,
