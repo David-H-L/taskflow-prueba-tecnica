@@ -1,13 +1,17 @@
 import ProjectCard from '@/components/projects/projectCard';
 import { getProjects } from '@/actions/projectActions';
-import Button from '@/components/ui/button';
+import SidebarToggle from '@/components/sidebar/sidebarToggle';
+import LinkButton from '@/components/ui/linkButton';
 export default async function Project() {
   const projects = await getProjects();
   return (
     <div>
-      <header className="p-4 pb-0 flex justify-between">
-        <h2 className="text-2xl font-bold">Projects</h2>
-        <Button>Crear nuevo proyecto</Button>
+      <header className="p-4 flex justify-between bg-white">
+        <div className="flex gap-2">
+          <SidebarToggle />
+          <h2 className="text-2xl font-bold">Projects</h2>
+        </div>
+        <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>
       </header>
 
       <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4">

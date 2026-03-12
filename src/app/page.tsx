@@ -2,7 +2,6 @@ import TasksStatus from '@/components/dashboard/taskStatus';
 import TotalCard from '@/components/dashboard/totalCard';
 import TaskTable from '@/components/dashboard/taskTable';
 import PendingTasksCard from '@/components/dashboard/pendingTaskCard';
-import Button from '@/components/ui/button';
 import { getNumberProjects } from '@/actions/projectActions';
 import SidebarToggle from '@/components/sidebar/sidebarToggle';
 import LinkButton from '@/components/ui/linkButton';
@@ -28,7 +27,7 @@ export default async function DashBoard() {
           <h1 className="text-2xl font-bold">Dashboard</h1>
         </div>
 
-        <Button>Crear nuevo proyecto</Button>
+        <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>
       </header>
 
       <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 p-2">
