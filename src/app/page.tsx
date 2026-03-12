@@ -2,8 +2,9 @@ import TasksStatus from '@/components/dashboard/taskStatus';
 import TotalCard from '@/components/dashboard/totalCard';
 import TaskTable from '@/components/dashboard/taskTable';
 import PendingTasksCard from '@/components/dashboard/pendingTaskCard';
-import Button from '@/components/ui/button';
 import { getNumberProjects } from '@/actions/projectActions';
+import SidebarToggle from '@/components/sidebar/sidebarToggle';
+import LinkButton from '@/components/ui/linkButton';
 import {
   getNumberTasks,
   getTasks,
@@ -20,9 +21,13 @@ export default async function DashBoard() {
 
   return (
     <div>
-      <header className="p-4 pb-0 flex justify-between">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <Button>Crear nuevo proyecto</Button>
+      <header className="p-4 flex justify-between bg-white">
+        <div className="flex gap-2">
+          <SidebarToggle />
+          <h1 className="text-2xl font-bold">Dashboard</h1>
+        </div>
+
+        <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>
       </header>
 
       <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 p-2">
@@ -30,11 +35,11 @@ export default async function DashBoard() {
           <TotalCard
             title="Total de proyectos"
             value={numberProjects}
-            icon={numberTasks}
+            icon={0}
           />
         </div>
         <div className="md:col-span-2 p-2">
-          <TotalCard title="Total de tareas" value={15} icon={0} />
+          <TotalCard title="Total de tareas" value={numberTasks} icon={1} />
         </div>
         <div className="md:col-span-4 p-2">
           <TasksStatus data={status} />
@@ -61,9 +66,12 @@ export default async function DashBoard() {
               />
             ))}
             <div className="flex justify-center">
-              <Button className="mt-3 w-full sm:w-56 md:w-64 lg:mt-5">
+              <LinkButton
+                link="/projects"
+                className="mt-3 w-full sm:w-56 md:w-64 lg:mt-5"
+              >
                 Ver todos los proyectos
-              </Button>
+              </LinkButton>
             </div>
           </div>
         </section>

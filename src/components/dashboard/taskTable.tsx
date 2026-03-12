@@ -3,7 +3,7 @@ import { faListAlt } from '@fortawesome/free-regular-svg-icons';
 import { PropsTaskTable } from '@/types/index';
 
 const stateColors: Record<string, string> = {
-  PENDING: 'bg-orange-500',
+  PENDING: 'bg-red-500',
   IN_PROGRESS: 'bg-blue-500',
   COMPLETED: 'bg-green-500',
 };
