@@ -1,4 +1,5 @@
 'use server';
+import { Prisma } from '@/generated/prisma/client';
 import { prisma } from '@/lib/prisma';
 
 export async function getNumberTasks() {
@@ -111,6 +112,19 @@ export async function getPendingProjectTasks() {
     return result;
   } catch (error) {
     console.error('Error getting pending project tasks:', error);
+    throw error;
+  }
+}
+
+export async function createTask(data: Prisma.TaskCreateInput) {
+  try {
+    const task = await prisma.task.create({
+      data,
+    });
+
+    return task;
+  } catch (error) {
+    console.error('Error creating task:', error);
     throw error;
   }
 }
