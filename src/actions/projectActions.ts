@@ -58,3 +58,33 @@ export async function getProjects() {
     throw error;
   }
 }
+
+export async function getProjectWithTasks(projectId: string) {
+  try {
+    const project = await prisma.project.findUnique({
+      where: {
+        id: projectId,
+      },
+      select: {
+        id: true,
+        name: true,
+        description: true,
+        createdAt: true,
+
+        tasks: {
+          select: {
+            id: true,
+            title: true,
+            status: true,
+            priority: true,
+          },
+        },
+      },
+    });
+
+    return project;
+  } catch (error) {
+    console.error('Error getting project with tasks:', error);
+    throw error;
+  }
+}
