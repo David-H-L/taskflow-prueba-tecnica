@@ -29,9 +29,9 @@ export default function Sidebar() {
         </div>
 
         <nav className="flex flex-col p-4 gap-4">
-          <Link href="/">Dashboard</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="#">Tasks</Link>
+          <Link href="/">Panel principal</Link>
+          <Link href="/projects">Proyectos</Link>
+          <Link href="/projects/new">Crear proyecto</Link>
         </nav>
       </aside>
     </div>

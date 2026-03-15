@@ -21,3 +21,16 @@ export const priorityDashboardStyles: Record<string, string> = {
   MEDIUM: 'bg-yellow-100 text-yellow-700',
   LOW: 'bg-green-100 text-green-700',
 };
+
+//To change language English to Spanish
+export const englishToSpanishStatus: Record<string, string> = {
+  PENDING: 'Pendiente',
+  IN_PROGRESS: 'En progreso',
+  COMPLETED: 'Completado',
+};
+
+export const englishToSpanishPriority: Record<string, string> = {
+  HIGH: 'Alta',
+  MEDIUM: 'Media',
+  LOW: 'Baja',
+};

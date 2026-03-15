@@ -22,9 +22,9 @@ export default function PendingTasksCard({
         <div className="col-span-14 ml-2 sm:ml-0 lg:ml-2">
           <header className="flex justify-between text-[11px] sm:text-[14px]">
             <h3>
-              {name} - {pending} pending
+              {name} - {pending} pendiente
             </h3>
-            <span>{percentage} % completed</span>
+            <span>{percentage} % completado</span>
           </header>
           <div className="w-full bg-gray-200 rounded-full h-3">
             <div

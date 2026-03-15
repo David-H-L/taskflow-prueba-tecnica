@@ -9,7 +9,7 @@ export default async function Project() {
       <header className="p-4 flex justify-between bg-white">
         <div className="flex gap-2">
           <SidebarToggle />
-          <h2 className="text-2xl font-bold">Projects</h2>
+          <h2 className="text-2xl font-bold">Proyectos</h2>
         </div>
         <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>
       </header>

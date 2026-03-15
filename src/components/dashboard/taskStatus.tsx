@@ -1,4 +1,5 @@
 import { PropsTaskStatus } from '@/types/index';
+import { englishToSpanishStatus } from '@/utils/styles';
 
 export default function TasksStatus({ data }: PropsTaskStatus) {
   const maxValue = Math.max(...data.map((item) => item.value));
@@ -15,7 +16,7 @@ export default function TasksStatus({ data }: PropsTaskStatus) {
           return (
             <div key={item.label} className="flex items-center gap-3 md:gap-4">
               <span className="w-28 text-sm md:text-base text-gray-700">
-                {item.label}
+                {englishToSpanishStatus[item.label]}
               </span>
 
               <div className="flex-1 bg-gray-200 rounded-full h-4">

@@ -34,7 +34,7 @@ export async function getTasks() {
             : 'bg-green-500';
 
       return {
-        label: status.replace('_', ' '),
+        label: status,
         value: found?._count.status ?? 0,
         color,
       };

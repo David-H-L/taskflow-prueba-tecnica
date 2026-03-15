@@ -2,6 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-regular-svg-icons';
 import { PropsTaskTable } from '@/types/index';
 import { statusStyles, priorityDashboardStyles } from '@/utils/styles';
+import {
+  englishToSpanishStatus,
+  englishToSpanishPriority,
+} from '@/utils/styles';
 
 export default function TaskTable({ data }: PropsTaskTable) {
   return (
@@ -27,12 +31,16 @@ export default function TaskTable({ data }: PropsTaskTable) {
               <div
                 className={`col-span-2 my-auto rounded-2xl mx-2 md:mx-6 p-px ${statusStyles[item.state]}`}
               >
-                <p className="text-center">{item.state}</p>
+                <p className="text-center">
+                  {englishToSpanishStatus[item.state]}
+                </p>
               </div>
               <div
                 className={`col-span-1 my-auto rounded-2xl p-px ${priorityDashboardStyles[item.priority]}`}
               >
-                <p className="text-center">{item.priority}</p>
+                <p className="text-center">
+                  {englishToSpanishPriority[item.priority]}
+                </p>
               </div>
             </section>
           </div>

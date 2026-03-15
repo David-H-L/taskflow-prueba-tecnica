@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import {
   createTask,
@@ -11,6 +10,7 @@ import {
   statusStyles,
   priorityTextStyles,
   priorityBgStyles,
+  englishToSpanishPriority,
 } from '@/utils/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons';
@@ -173,7 +173,7 @@ export default function Table({
                     <span
                       className={`w-3 h-3 rounded ${priorityBgStyles[task.priority]}`}
                     />
-                    {task.priority}
+                    {englishToSpanishPriority[task.priority]}
                   </div>
                 </td>
 
