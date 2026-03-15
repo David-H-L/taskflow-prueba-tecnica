@@ -193,7 +193,6 @@ export default function Table({
                   </select>
                 </td>
 
-                {/* ACTIONS */}
                 <td className="text-right">
                   <div className="flex justify-end gap-3">
                     <button
