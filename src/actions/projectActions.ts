@@ -127,3 +127,23 @@ export async function deleteProject(id: string) {
     throw error;
   }
 }
+
+export async function createProject(
+  name: string,
+  description: string,
+  color: string
+) {
+  try {
+    const project = prisma.project.create({
+      data: {
+        name: name,
+        description: description,
+        color: color,
+      },
+    });
+    return project;
+  } catch (error) {
+    console.error('Error creating project:', error);
+    throw error;
+  }
+}
