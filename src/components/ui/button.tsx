@@ -3,6 +3,7 @@ import { ButtonProps } from '@/types/index';
 export default function Button({
   children,
   color = 'primary',
+  onClick,
   className = '',
   type = 'button',
 }: ButtonProps) {
@@ -16,6 +17,7 @@ export default function Button({
   return (
     <button
       type={type}
+      onClick={onClick}
       className={`
         ${colorStyles[color]}
         px-4 py-2
