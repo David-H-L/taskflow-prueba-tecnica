@@ -1,6 +1,7 @@
 'use server';
 import { Prisma } from '@/generated/prisma/client';
 import { prisma } from '@/lib/prisma';
+import { Status } from '@/types';
 
 export async function getNumberTasks() {
   try {
@@ -125,6 +126,55 @@ export async function createTask(data: Prisma.TaskCreateInput) {
     return task;
   } catch (error) {
     console.error('Error creating task:', error);
+    throw error;
+  }
+}
+
+export async function updateTask(id: string, data: Prisma.TaskUpdateInput) {
+  try {
+    const task = await prisma.task.update({
+      where: {
+        id: id,
+      },
+      data,
+    });
+
+    return task;
+  } catch (error) {
+    console.error('Error updating task:', error);
+    throw error;
+  }
+}
+
+export async function deleteTask(id: string) {
+  try {
+    const task = await prisma.task.delete({
+      where: {
+        id: id,
+      },
+    });
+
+    return task;
+  } catch (error) {
+    console.error('Error deleting task:', error);
+    throw error;
+  }
+}
+
+export async function updateTaskStatus(id: string, status: Status) {
+  try {
+    const task = await prisma.task.update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: status,
+      },
+    });
+
+    return task;
+  } catch (error) {
+    console.error('Error updating task status:', error);
     throw error;
   }
 }
