@@ -35,10 +35,10 @@ export type PropsTotalCard = {
 
 export type ButtonProps = {
   children: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'success' | 'danger';
+  color?: 'primary' | 'secondary' | 'danger';
   onClick?: () => void;
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
+  type?: 'button';
 };
 
 type ProgressStatus = {
