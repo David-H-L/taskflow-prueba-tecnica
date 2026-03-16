@@ -35,7 +35,7 @@ export type PropsTotalCard = {
 
 export type ButtonProps = {
   children: React.ReactNode;
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'danger';
   onClick?: () => void;
   className?: string;
   type?: 'button';
