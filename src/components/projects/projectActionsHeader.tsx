@@ -9,6 +9,7 @@ import {
   updateNameDescriptionProject,
   deleteProject,
 } from '@/actions/projectActions';
+import Swal from 'sweetalert2';
 
 type ProjectProps = {
   id: string;
@@ -33,6 +34,23 @@ export default function ProjectActionsHeader({
         updatedProject.name,
         updatedProject.description ?? ''
       );
+
+      if (projectFromDB) {
+        Swal.fire({
+          title: 'Proyecto actualizado',
+          text: 'El proyecto fue actualizado con exito!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+      } else {
+        Swal.fire({
+          title: 'Error al actualizar el proyecto',
+          text: 'No fue posible actualizar el proyecto.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      }
+
       setProjectData((prev) => ({
         ...prev,
         name: projectFromDB.name,
@@ -46,10 +64,29 @@ export default function ProjectActionsHeader({
 
   const handleDelete = async (id: string) => {
     try {
-      const projectFromDB = await deleteProject(id);
-      console.log(projectFromDB);
-      // redirige a la lista de proyectos o dashboard
-      router.push('/');
+      const result = await Swal.fire({
+        title: 'Estas seguro de eliminar?',
+        text: 'No seras capaz de revertir el proyecto eliminado!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+      });
+
+      if (result.isConfirmed) {
+        await deleteProject(id);
+
+        await Swal.fire({
+          title: 'Proyecto eliminado!',
+          text: 'El proyecto fue eliminada con exito.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+
+        router.push('/');
+      }
     } catch (error) {
       console.error('Error deleting project:', error);
     }

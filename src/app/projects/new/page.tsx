@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { HandleChange } from '@/types/modals';
 import Button from '@/components/ui/button';
 import { createProject } from '@/actions/projectActions';
+import Swal from 'sweetalert2';
 
 type CreateProjectProps = {
   name: string;
@@ -31,12 +32,31 @@ export default function NewProject() {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validate()) return;
 
     try {
-      const project = createProject(form.name, form.description, form.color);
-      console.log(project);
+      const project = await createProject(
+        form.name,
+        form.description,
+        form.color
+      );
+
+      if (project) {
+        Swal.fire({
+          title: 'Proyecto creado',
+          text: 'El proyecto fue creado con exito!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+      } else {
+        Swal.fire({
+          title: 'Error al crear la tarea',
+          text: 'No fue posible crear la tarea.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      }
 
       setForm({
         name: '',

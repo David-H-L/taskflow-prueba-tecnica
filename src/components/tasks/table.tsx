@@ -19,6 +19,7 @@ import { TaskDetail, Status } from '@/types/index';
 import CreateTaskModal from '@/components/tasks/createTask';
 import EditTaskModal from '@/components/tasks/editTask';
 import Button from '@/components/ui/button';
+import Swal from 'sweetalert2';
 
 export default function Table({
   taskDetil,
@@ -58,9 +59,28 @@ export default function Table({
 
   const handleDeleteTask = async (id: string) => {
     try {
-      const data = await deleteTask(id);
-      console.log(data);
-      setTasks((prev) => prev.filter((task) => task.id !== id));
+      const result = await Swal.fire({
+        title: 'Estas seguro de eliminar?',
+        text: 'No seras capaz de revertir la tarea eliminada!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+      });
+
+      if (result.isConfirmed) {
+        await deleteTask(id);
+
+        setTasks((prev) => prev.filter((task) => task.id !== id));
+
+        Swal.fire({
+          title: 'Tarea eliminada!',
+          text: 'La tarea fue eliminada con exito.',
+          icon: 'success',
+        });
+      }
     } catch (error) {
       console.error('Error deleting task:', error);
     }
@@ -76,6 +96,22 @@ export default function Table({
         status: updatedTask.status,
         priority: updatedTask.priority,
       });
+
+      if (taskFromDB) {
+        Swal.fire({
+          title: 'Tarea actualizada',
+          text: 'La tarea fue actualizada con exito!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+      } else {
+        Swal.fire({
+          title: 'Error al actualizar la tarea',
+          text: 'No fue posible actualizar la tarea.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      }
 
       setTasks((prev) =>
         prev.map((task) => (task.id === taskFromDB.id ? taskFromDB : task))
@@ -105,6 +141,22 @@ export default function Table({
           },
         },
       });
+
+      if (newTask) {
+        Swal.fire({
+          title: 'Tarea creada',
+          text: 'La tarea fue creada con exito!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+      } else {
+        Swal.fire({
+          title: 'Error al crear la tarea',
+          text: 'No fue posible crear la tarea.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      }
 
       setTasks((prev) => [...prev, newTask]);
       setIsModalOpen({
