@@ -36,6 +36,7 @@ export type PropsTotalCard = {
 export type ButtonProps = {
   children: React.ReactNode;
   color?: 'primary' | 'secondary' | 'success' | 'danger';
+  onClick?: () => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
 };
@@ -53,3 +54,15 @@ export type ProjectCardProps = {
   color: string;
   tasks: ProgressStatus;
 };
+
+export type Status = 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+type Priority = 'HIGH' | 'MEDIUM' | 'LOW';
+
+export interface TaskDetail {
+  id?: string;
+  title: string;
+  description?: string | null;
+  priority: Priority; //
+  status: Status; //
+  projectId?: string;
+}

@@ -24,7 +24,7 @@ export default async function DashBoard() {
       <header className="p-4 flex justify-between bg-white">
         <div className="flex gap-2">
           <SidebarToggle />
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+          <h1 className="text-2xl font-bold">Panel principal</h1>
         </div>
 
         <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>

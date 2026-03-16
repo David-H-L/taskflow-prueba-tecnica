@@ -1,18 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-regular-svg-icons';
 import { PropsTaskTable } from '@/types/index';
-
-const stateColors: Record<string, string> = {
-  PENDING: 'bg-red-500',
-  IN_PROGRESS: 'bg-blue-500',
-  COMPLETED: 'bg-green-500',
-};
-
-const priorityColors: Record<string, string> = {
-  LOW: 'bg-blue-500',
-  MEDIUM: 'bg-yellow-500',
-  HIGH: 'bg-red-500',
-};
+import { statusStyles, priorityDashboardStyles } from '@/utils/styles';
+import {
+  englishToSpanishStatus,
+  englishToSpanishPriority,
+} from '@/utils/styles';
 
 export default function TaskTable({ data }: PropsTaskTable) {
   return (
@@ -36,14 +29,18 @@ export default function TaskTable({ data }: PropsTaskTable) {
                 </div>
               </div>
               <div
-                className={`col-span-2 my-auto rounded-2xl mx-2 md:mx-6 p-px ${stateColors[item.state]}`}
+                className={`col-span-2 my-auto rounded-2xl mx-2 md:mx-6 p-px ${statusStyles[item.state]}`}
               >
-                <p className="text-center text-white ">{item.state}</p>
+                <p className="text-center">
+                  {englishToSpanishStatus[item.state]}
+                </p>
               </div>
               <div
-                className={`col-span-1 my-auto rounded-2xl p-px ${priorityColors[item.priority]}`}
+                className={`col-span-1 my-auto rounded-2xl p-px ${priorityDashboardStyles[item.priority]}`}
               >
-                <p className="text-center text-white">{item.priority}</p>
+                <p className="text-center">
+                  {englishToSpanishPriority[item.priority]}
+                </p>
               </div>
             </section>
           </div>

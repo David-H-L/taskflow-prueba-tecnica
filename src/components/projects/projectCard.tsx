@@ -26,24 +26,22 @@ export default function ProjectCard({
 
         <footer className="grid grid-cols-3 gap-4 mt-auto text-sm">
           <div className="flex flex-col">
-            <span className="text-gray-500">Completed</span>
+            <span className="text-gray-500">Completado</span>
             <span className="font-semibold text-green-600">
               {tasks.completed}
             </span>
           </div>
 
           <div className="flex flex-col">
-            <span className="text-gray-500">In Progress</span>
+            <span className="text-gray-500">En progreso</span>
             <span className="font-semibold text-blue-600">
               {tasks.inProgress}
             </span>
           </div>
 
           <div className="flex flex-col">
-            <span className="text-gray-500">Pending</span>
-            <span className="font-semibold text-orange-500">
-              {tasks.pending}
-            </span>
+            <span className="text-gray-500">Pendiente</span>
+            <span className="font-semibold text-red-500">{tasks.pending}</span>
           </div>
         </footer>
       </article>
