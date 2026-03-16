@@ -10,12 +10,14 @@ import {
 export default function TaskTable({ data }: PropsTaskTable) {
   return (
     <div className="w-full bg-white rounded-xl shadow-md p-4">
-      <h2 className="text-lg font-semibold mb-4">Tareas recientes</h2>
+      <h2 className="text-lg font-semibold mb-4 lg:text-[14px] xl:text-lg">
+        Tareas recientes
+      </h2>
       {data.map((item, index) => {
         return (
           <div key={index}>
             <hr className="text-gray-500" />
-            <section className="grid grid-cols-7 text-[10px] sm:text-[14px] m-1">
+            <section className="grid grid-cols-7 text-[10px] sm:text-[14px] lg:text-[11px] xl:text-[14px] m-1">
               <div className="col-span-4 flex">
                 <span className="flex items-center justify-center w-10 h-10 bg-blue-300 rounded-full mx-2">
                   <FontAwesomeIcon

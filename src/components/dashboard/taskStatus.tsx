@@ -5,7 +5,7 @@ export default function TasksStatus({ data }: PropsTaskStatus) {
   const maxValue = Math.max(...data.map((item) => item.value));
   return (
     <div className="w-full bg-white rounded-xl shadow-md p-4">
-      <h2 className="text-lg md:text-xl font-semibold mb-4">
+      <h2 className="text-lg md:text-xl font-semibold mb-4 lg:text-[18px] xl:text-xl">
         Tareas por estado
       </h2>
 
