@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <Sidebar />
 
-        <main className="lg:ml-64">{children}</main>
+        <main className="lg:ml-55">{children}</main>
       </body>
     </html>
   );

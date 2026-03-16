@@ -6,7 +6,9 @@ import { PropsTotalCard } from '@/types/index';
 export default function TotalCard({ title, value, icon }: PropsTotalCard) {
   return (
     <div className="w-full h-full bg-white rounded-xl shadow-md p-4">
-      <h2 className="text-lg md:text-xl font-semibold mb-4 sm:mb-6">{title}</h2>
+      <h2 className="text-lg md:text-xl font-semibold mb-4 sm:mb-6 lg:text-[18px] xl:text-xl">
+        {title}
+      </h2>
       <div className="flex justify-between">
         <span className="text-4xl sm:text-5xl font-bold">{value}</span>
         {icon === 0 ? (

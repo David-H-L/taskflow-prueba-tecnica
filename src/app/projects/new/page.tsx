@@ -89,7 +89,7 @@ export default function NewProject() {
       <header className="p-4 bg-white">
         <div className="flex gap-2">
           <SidebarToggle />
-          <h2 className="text-2xl font-bold">Crear Proyecto</h2>
+          <h2 className="text-[18px] sm:text-2xl font-bold">Crear Proyecto</h2>
         </div>
       </header>
       <main className="p-4">

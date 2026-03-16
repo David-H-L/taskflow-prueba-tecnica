@@ -18,13 +18,8 @@ export default async function Detail({ params }: PageProps) {
       <header className="p-4 flex justify-between bg-white">
         <div className="flex gap-2">
           <SidebarToggle />
-          <h2 className="text-2xl font-bold">Proyectos</h2>
+          <h2 className="text-[18px] sm:text-2xl font-bold">Proyectos</h2>
         </div>
-        <input
-          type="number"
-          placeholder="buscar por id"
-          className="border border-gray-500 rounded-[5px]"
-        />
       </header>
 
       {projectWithTasks && (

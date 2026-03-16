@@ -24,10 +24,12 @@ export default async function DashBoard() {
       <header className="p-4 flex justify-between bg-white">
         <div className="flex gap-2">
           <SidebarToggle />
-          <h1 className="text-2xl font-bold">Panel principal</h1>
+          <h1 className="text-[18px] sm:text-2xl font-bold">Panel principal</h1>
         </div>
 
-        <LinkButton link="/projects/new">Crear nuevo proyecto</LinkButton>
+        <LinkButton link="/projects/new" className="text-[12px]">
+          Crear nuevo proyecto
+        </LinkButton>
       </header>
 
       <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 p-2">
@@ -53,7 +55,7 @@ export default async function DashBoard() {
         </section>
         <section className="p-4 lg:col-span-2">
           <div className="w-full bg-white rounded-xl shadow-md p-4 h-full">
-            <h2 className="text-lg font-semibold mb-2">
+            <h2 className="text-lg font-semibold mb-2 lg:text-[14px] xl:text-lg">
               Top 3 Projectos con tareas pendinetes
             </h2>
             {pendingProjectTasks.map((item, index) => (
@@ -68,7 +70,7 @@ export default async function DashBoard() {
             <div className="flex justify-center">
               <LinkButton
                 link="/projects"
-                className="mt-3 w-full sm:w-56 md:w-64 lg:mt-5"
+                className="mt-3 w-full sm:w-56 md:w-64 lg:mt-5 lg:text-[11px] xl:text-base"
               >
                 Ver todos los proyectos
               </LinkButton>

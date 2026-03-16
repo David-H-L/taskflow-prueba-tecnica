@@ -115,9 +115,9 @@ export default function ProjectActionsHeader({
       <UpdateProject
         isOpen={isModalOpen}
         project={{
-          id: project.id,
-          name: project.name,
-          description: project.description,
+          id: projectData.id,
+          name: projectData.name,
+          description: projectData.description,
         }}
         onClose={() => setIsModalOpen(false)}
         onSubmit={handleUpdate}
