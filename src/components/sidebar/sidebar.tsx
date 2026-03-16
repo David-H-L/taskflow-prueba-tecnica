@@ -17,7 +17,7 @@ export default function Sidebar() {
 
       <aside
         className="
-        fixed top-0 left-0 h-full w-64 bg-gray-900 text-white
+        fixed top-0 left-0 h-full w-55 bg-gray-900 text-white
         transform transition-transform duration-300
         -translate-x-full
         peer-checked:translate-x-0

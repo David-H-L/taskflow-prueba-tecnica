@@ -20,7 +20,7 @@ export default function PendingTasksCard({
           </strong>
         </div>
         <div className="col-span-14 ml-2 sm:ml-0 lg:ml-2">
-          <header className="flex justify-between text-[11px] sm:text-[14px]">
+          <header className="flex justify-between text-[11px] sm:text-[14px] lg:text-[11px]">
             <h3>
               {name} - {pending} pendiente
             </h3>

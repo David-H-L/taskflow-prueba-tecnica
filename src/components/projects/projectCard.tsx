@@ -20,27 +20,35 @@ export default function ProjectCard({
             />
           </div>
           <div>
-            <p className="text-gray-500 text-sm line-clamp-2">{description}</p>
+            <p className="text-gray-500 text-[13px] line-clamp-2">
+              {description}
+            </p>
           </div>
         </header>
 
         <footer className="grid grid-cols-3 gap-4 mt-auto text-sm">
           <div className="flex flex-col">
-            <span className="text-gray-500">Completado</span>
+            <span className="text-gray-500 sm:text-[12px] lg:text-[10px] xl:text-[12px]">
+              Completado
+            </span>
             <span className="font-semibold text-green-600">
               {tasks.completed}
             </span>
           </div>
 
           <div className="flex flex-col">
-            <span className="text-gray-500">En progreso</span>
+            <span className="text-gray-500 sm:text-[12px] lg:text-[10px] xl:text-[12px]">
+              En progreso
+            </span>
             <span className="font-semibold text-blue-600">
               {tasks.inProgress}
             </span>
           </div>
 
           <div className="flex flex-col">
-            <span className="text-gray-500">Pendiente</span>
+            <span className="text-gray-500 sm:text-[12px] lg:text-[10px] xl:text-[12px]">
+              Pendiente
+            </span>
             <span className="font-semibold text-red-500">{tasks.pending}</span>
           </div>
         </footer>
